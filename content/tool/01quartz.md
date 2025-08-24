@@ -25,6 +25,71 @@ npx quartz create
 npx quartz build --serve
 ```
 
+## 🤗 Quartz与github部署
+
+- github仓库初始化
+
+> git clone 时建议从代码仓库https://github.com/jackyzha0/quartz.git
+>
+> - use this template
+> - create a new repository
+> - 文件名命名为github-usename.github.io
+
+- 在本地 quartz 中按以下路径创建新文件，并保存以下代码内容
+  - `quartz/.github/workflows/deploy.yml`
+  - 同步更新代码到仓库`npx quartz sync`
+
+- 前往 github 仓库，点击 Settings>Pages>Source 下拉菜单，选择 Github Actions
+- 最后提交更改，网站将部署到 `<github-username>.github.io/<repository-names>`，pages 页面会有以下提示 `Your site is live at https://insile.github.io/my- notes/`
+
+```
+name: Deploy Quartz site to GitHub Pages
+
+on:
+  push:
+    branches:
+      - v4
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Fetch all history for git info
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install Dependencies
+        run: npm ci
+      - name: Build Quartz
+        run: npx quartz build
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+
+  deploy:
+    needs: build
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+```
+
 ## 😎 Quartz基础配置
 
 基础配置需要在 `quartz.config.ts` 中进行配置，具体参数详情见[官方文档](https://quartz.songxingguo.com/configuration)
