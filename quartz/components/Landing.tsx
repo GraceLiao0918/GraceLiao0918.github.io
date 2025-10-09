@@ -40,9 +40,9 @@ export const CARDS = {
     </a>
   ),
   maintenance: (
-    <a href={"/maintenance"}>
+    <a href={"/MachineLearning"}>
       <div class="card card-5">
-        <p class="card-title">Maintenance</p>
+        <p class="card-title">Machine Learning</p>
         <p class="card-subhead">Issue 005</p>
         <img src="/static/5-illo.png" class="card-illustration-5" />
       </div>
@@ -51,7 +51,7 @@ export const CARDS = {
   "demo-days": (
     <a href={"/demo-days"}>
       <div class="card card-4">
-        <p class="card-title">Demo Days</p>
+        <p class="card-title">Demo-days</p>
         <p class="card-subhead">Issue 006</p>
         <img src="/static/4-illo.png" class="card-illustration-4" />
       </div>
