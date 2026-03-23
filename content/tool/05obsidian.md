@@ -1,5 +1,5 @@
 ---
-title: Obsidian的使用方法
+title: 🍢 Obsidian的使用方法
 tags:
   - tool
 ---

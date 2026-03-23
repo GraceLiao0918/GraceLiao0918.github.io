@@ -1,5 +1,5 @@
 ---
-title: Quartz博客框架使用方法
+title: 🥠 Quartz博客框架使用方法
 tags:
   - tool
 ---
