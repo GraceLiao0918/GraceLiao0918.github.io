@@ -8,12 +8,7 @@ tags:
 
 下载：https://nodejs.org/zh-cn
 
-版本：
-`
-node -v v24.20.0
-
-npm -v 11.19.0
-`
+版本：`node -v v24.20.0  npm -v 11.19.0`
 
 ##### PowerShell中npm命令无法运行的问题
 
