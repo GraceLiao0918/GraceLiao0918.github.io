@@ -1,5 +1,5 @@
 ---
-title: 🎃 研究生课程
+title: 🎃 研究生旅程
 tags:
   - class
 ---
