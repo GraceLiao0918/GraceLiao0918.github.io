@@ -34,6 +34,8 @@ tags:
 
 ### 图表
 
+[流程图语法 | Mermaid中文文档](https://docs.min2k.com/zh/mermaid/syntax/flowchart.html)
+
 ```mermaid
 sequenceDiagram
     Alice->>+John: Hello John, how are you?
