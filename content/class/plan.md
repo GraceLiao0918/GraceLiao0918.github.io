@@ -41,5 +41,29 @@ tags:
 
 >问题理解 → 最小代码实践 → 经典算法 → 小论文复现 → 与数字人教师结合
 
+Reinforcement Learning + Intelligent Tutoring System
+Reinforcement Learning + Personalized Learning
+Reinforcement Learning + Virtual Human / Digital Human
+
+|问题|内容|
+|---|---|
+|Problem|解决什么问题？|
+|State|状态是什么？|
+|Action|动作是什么？|
+|Reward|奖励是什么？|
+|Algorithm|使用什么 RL？|
+|Dataset/Environment|如何实验？|
+|Limitation|有什么缺点？|
 
 [scutan90/DeepLearning-500-questions: 深度学习500问，以问答形式对常用的概率知识、线性代数、机器学习、深度学习、计算机视觉等热点问题进行阐述，以帮助自己及有需要的读者。 全书分为18个章节，50余万字。由于水平有限，书中不妥之处恳请广大读者批评指正。 未完待续............ 如有意合作，联系scutjy2015@163.com 版权所有，违权必究 Tan 2018.06](https://github.com/scutan90/DeepLearning-500-questions)
+
+
+Day 01
+RL 基本概念 https://spinningup.openai.com/en/latest/?utm_source=chatgpt.com
+
+Q-Learning → DQN 
+https://huggingface.co/learn/deep-rl-course/en/unit0/introduction?utm_source=chatgpt.com
+
+Policy Gradient + PPO
+https://spinningup.openai.com/en/latest/algorithms/ppo.html?utm_source=chatgpt.com
+
