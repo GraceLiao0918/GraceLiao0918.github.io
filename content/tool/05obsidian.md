@@ -43,3 +43,5 @@ sequenceDiagram
     John-->>-Alice: Hi Alice, I can hear you!
     John-->>-Alice: I feel great!
 ```
+### content cards插件
+[Content Cards - Obsidian Plugin](https://community.obsidian.md/plugins/content-cards)

@@ -8,7 +8,6 @@ cssclasses:
   - hide-properties
 ---
 
----
 
 
 # (✿◕‿◕✿)Welcome to llotso!💕
@@ -28,6 +27,63 @@ dv.paragraph(
 	totalDays+totalMd+"、"+totalTag+""
 )
 ```
+
+```cards-target 
+@card  [color-purple]
+title:#HomePage
+value:HomePage
+unit: 欢迎来到llosto的world
+
+@card [color-red] 
+title: #tool
+value:  团子杂货铺
+unit: 藏满小妙招的便利小仓库
+
+@card [color-orange]
+title: #algorithm 
+value:算法小铺
+unit: 装满解题思路的灵感货架
+
+@card  [color-yellow]
+title: #algorithm 
+value:机器学习小铺
+unit: 让模型慢慢变聪明的训练货架
+
+@card  [color-pink]
+title:#class 
+value:课堂小铺
+unit: 课程知识的学习小卖部呀
+
+@card  [color-yellow]
+title:#TodoLists
+value:TodoLists
+unit: 把计划一一收好lists
+
+@card  [color-blue]
+title:#templates 
+value:模板小铺
+unit: 拿来就能用的版式仓库
+
+@card  [color-purple]
+title:#slides 
+value:幻灯片小铺
+unit: 装着演示页面的放映杂货铺
+
+@card  [color-cyan]
+title:#diary 
+value:日记小铺
+unit: 记录日常碎碎念的温柔储藏柜
+
+@card  [color-green]
+title:#ReinforcementLearning 
+value:强化学习小铺
+unit: 在奖励中越练越强的闯关小店
+
+
+```
+
+
+
 
 ```dataviewjs
 const allPages = dv.pages();
@@ -58,46 +114,9 @@ const tagHtml = sortedTags.map(([tag, count], index) =>
 dv.paragraph(`<div style="display: flex; flex-wrap: wrap; gap: 4px;">${tagHtml}</div>`);
 ```
 
-```dataviewjs
-const pages = dv.pages('""');
-const allTasks = pages.file.tasks;
 
-const total = allTasks.length;
-const completed = allTasks.where(t => t.completed).length;
-const incomplete = total - completed;
 
-const today = dv.date('today');
-const startOfWeek = today.startOf('week');
-const monday = startOfWeek.plus({ days: startOfWeek.weekday === 7 ? 1 : 0 });
-const sunday = monday.plus({ days: 6 });
-const completedThisWeek = allTasks
-    .where(t => t.completed && t.completion && t.completion >= monday && t.completion <= sunday)
-    .length;
-
-const progress = total > 0 ? Math.round((completed / total) * 100) : 0;
-
-dv.paragraph(`
-<div style="margin: 10px 0;">
-    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; text-align: center;">
-        <div style="padding: 12px 6px; background: #fff3cd; border-radius: 10px; border: 0px solid #ffc107;">
-            <div style="font-size: 22px; font-weight: bold; color: #856404;">${incomplete}</div>
-            <div style="font-size: 22px; color: #856404;">待完成</div>
-        </div>
-        <div style="padding: 12px 6px; background: #d4edda; border-radius: 10px; border: 0px solid #28a745;">
-            <div style="font-size: 22px; font-weight: bold; color: #155724;">${completed}</div>
-            <div style="font-size: 22px; color: #155724;">已完成</div>
-        </div>
-        <div style="padding: 12px 6px; background: linear-gradient(135deg, #11998e, #38ef7d); border-radius: 10px; color: white;">
-            <div style="font-size: 22px; font-weight: bold;">${progress}%</div>
-            <div style="font-size: 22px; opacity: 0.9;">完成率</div>
-        </div>
-    </div>
-    <div style="margin-top: 10px; padding: 10px; background: linear-gradient(135deg, #f093fb, #f5576c); border-radius: 8px; text-align: center; color: white; font-size: 13px;">
-        📍 本周已完成 <b>${completedThisWeek}</b> 个任务
-    </div>
-</div>
-`);
-```
+# 🎋数据总览
 
 ```dataviewjs
 const now = new Date();
@@ -155,47 +174,53 @@ dv.paragraph(`
 `);
 ```
 
-```dataviewjs
-const today = dv.date('today');
-const yesterday = today.minus(dv.duration('1 day'));
-const tomorrow = today.plus(dv.duration('1 day'));
-const formatDate = (date) => date.toFormat('yyyy-MM-dd');
+---
 
-dv.list([
-    `[[${formatDate(yesterday)}|◀ 昨天]]`,
-    `**[[${formatDate(today)}|📅 今天]]**`,
-    `[[${formatDate(tomorrow)}|明天 ▶]]`
-]);
+```dataviewjs
+const pages = dv.pages('""');
+const allTasks = pages.file.tasks;
+
+const total = allTasks.length;
+const completed = allTasks.where(t => t.completed).length;
+const incomplete = total - completed;
+
+const today = dv.date('today');
+const startOfWeek = today.startOf('week');
+const monday = startOfWeek.plus({ days: startOfWeek.weekday === 7 ? 1 : 0 });
+const sunday = monday.plus({ days: 6 });
+const completedThisWeek = allTasks
+    .where(t => t.completed && t.completion && t.completion >= monday && t.completion <= sunday)
+    .length;
+
+const progress = total > 0 ? Math.round((completed / total) * 100) : 0;
+
+dv.paragraph(`
+<div style="margin: 10px 0;">
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; text-align: center;">
+        <div style="padding: 12px 6px; background: #fff3cd; border-radius: 10px; border: 0px solid #ffc107;">
+            <div style="font-size: 22px; font-weight: bold; color: #856404;">${incomplete}</div>
+            <div style="font-size: 22px; color: #856404;">待完成</div>
+        </div>
+        <div style="padding: 12px 6px; background: #d4edda; border-radius: 10px; border: 0px solid #28a745;">
+            <div style="font-size: 22px; font-weight: bold; color: #155724;">${completed}</div>
+            <div style="font-size: 22px; color: #155724;">已完成</div>
+        </div>
+        <div style="padding: 12px 6px; background: linear-gradient(135deg, #11998e, #38ef7d); border-radius: 10px; color: white;">
+            <div style="font-size: 22px; font-weight: bold;">${progress}%</div>
+            <div style="font-size: 22px; opacity: 0.9;">完成率</div>
+        </div>
+    </div>
+    <div style="margin-top: 10px; padding: 10px; background: linear-gradient(135deg, #f093fb, #f5576c); border-radius: 8px; text-align: center; color: white; font-size: 13px;">
+        📍 本周已完成 <b>${completedThisWeek}</b> 个任务
+    </div>
+</div>
+`);
 ```
 
 
+ 
 
-- 团子杂货铺
-    - 标签： #tool 
-    - 简介：藏满小妙招的便利小仓库
-- 算法小铺
-    - 标签： #algorithm 
-    - 简介：装满解题思路的灵感货架
-- 课堂小铺
-    - 标签： #class 
-    - 简介：整理课程知识的学习小卖部
-- 机器学习小铺
-    - 标签： #machineLearning 
-    - 简介：让模型慢慢变聪明的训练货架
-- 强化学习小铺
-    - 标签： #ReinforcementLearning 
-    - 简介：在奖励中越练越强的闯关小店
-- 模板小铺
-    - 标签： #templates 
-    - 简介：拿来就能用的版式仓库
-- 幻灯片小铺
-    - 标签： #slides 
-    - 简介：装着演示页面的放映杂货铺
-- 日记小铺
-    - 标签： #diary 
-    - 简介：记录日常碎碎念的温柔储藏柜
-
-| 文件夹                   | 名称     | 标签                     | 简介             |
+%%| 文件夹                   | 名称     | 标签                     | 简介             |
 | --------------------- | ------ | ---------------------- | -------------- |
 | algorithm             | 算法小铺   | #algorithm             | 装满解题思路的灵感货架。   |
 | assets                | 素材小铺   | #assets                | 收藏各种可爱资源的百宝阁。  |
@@ -212,4 +237,19 @@ dv.list([
 | about                 | 关于小铺   | #about                 | 介绍自己和本站的小角落。   |
 | HomePage              | 首页小铺   | #HomePage              | 欢迎来到知识杂货铺。     |
 | index                 | 目录小铺   | #index                 | 快速找到内容的索引货架。   |
-| TodoLists             | 待办小铺   | #TodoLists             | 把计划一一收好的清单小店。  |
+| TodoLists             | 待办小铺   | #TodoLists             | 把计划一一收好的清单小店。  |%%
+
+
+# 📅日记传送门
+```dataviewjs
+const today = dv.date('today');
+const yesterday = today.minus(dv.duration('1 day'));
+const tomorrow = today.plus(dv.duration('1 day'));
+const formatDate = (date) => date.toFormat('yyyy-MM-dd');
+
+dv.list([
+    `[[${formatDate(yesterday)}|◀ 昨天]]`,
+    `**[[${formatDate(today)}|📅 今天]]**`,
+    `[[${formatDate(tomorrow)}|明天 ▶]]`
+]);
+```

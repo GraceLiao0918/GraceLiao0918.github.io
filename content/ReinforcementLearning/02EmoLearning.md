@@ -203,11 +203,11 @@ OV-MER 依赖于 EW-based 评估指标，然而 EW-based 评估指标无法通�
 >
 > **Performance（Table 4: Necessity of thinking process）**
 >
-> | Model | OV-MERD+ |
-> | --- | --- |
-> | AffectGPT | 62.52 |
-> | AffectGPT-R1 (w/ thinking) | 66.49 |
-> | AffectGPT-R1 (w/o thinking) | 68.39 |
+| Model | OV-MERD+ |
+| --- | --- |
+| AffectGPT | 62.52 |
+| AffectGPT-R1 (w/ thinking) | 66.49 |
+| AffectGPT-R1 (w/o thinking) | 68.39 |
 
 
 ## 总结
