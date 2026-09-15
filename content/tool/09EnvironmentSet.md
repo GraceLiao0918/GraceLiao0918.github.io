@@ -32,3 +32,35 @@ tags:
 
 使用：git Bash here
 
+
+# Anaconda
+
+下载：[Download Success - post download | Anaconda](https://www.anaconda.com/download-success)
+
+版本：2026-07
+
+是否安装成功？anacanda prompt 中（base）
+
+创建环境：conda create -n pytorchLearn python=3.7
+
+激活环境：conda activate pytorchLearn
+
+# Pytorch
+
+下载：[Get Started](https://pytorch.org/get-started/locally/)
+
+版本：2.14.0 CUDA_13.0
+
+在anaconda中安装：pip3 install torch torchvision --index-url https://download.pytorch.org/whl/cu130
+
+查看本地电脑CUDA版本：nvidia-smi
+
+查看anaconda的环境包：pip list
+
+检查pytorch是否可用：
+- python
+- import torch
+- torch.cuda.is_available()   Ture
+
+![[Pasted image 20260914143813.png]]
+

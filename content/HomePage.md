@@ -114,9 +114,17 @@ const tagHtml = sortedTags.map(([tag, count], index) =>
 dv.paragraph(`<div style="display: flex; flex-wrap: wrap; gap: 4px;">${tagHtml}</div>`);
 ```
 
+## ☃️ 最近TODO
 
+### 🎈 TODO Blog
 
-# 🎋数据总览
+| 当前状态       | 标题               | 描述                       |
+| ---------- | ---------------- | ------------------------ |
+| 【🏷️Pause】 | 手撕代码 & 项目题全掌握~前端 | leetCode中前端高频手撕代码题和项目思路题 |
+| 【🔍Pause】  | 七天八股速记：前端        | leetCode中前端高频面试题         |
+| 【😱Ing】    | Pytorch Learning          | Pytorch基础[[02Pytorch]]   |
+
+## 🎋数据总览
 
 ```dataviewjs
 const now = new Date();
@@ -240,7 +248,7 @@ dv.paragraph(`
 | TodoLists             | 待办小铺   | #TodoLists             | 把计划一一收好的清单小店。  |%%
 
 
-# 📅日记传送门
+## 📅日记传送门
 ```dataviewjs
 const today = dv.date('today');
 const yesterday = today.minus(dv.duration('1 day'));
