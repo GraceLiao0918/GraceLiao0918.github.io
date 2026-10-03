@@ -1,0 +1,11 @@
+{
+  "id": "conv-1790237656930-90gr8bmqd",
+  "providerId": "claude",
+  "title": "你好",
+  "titleGenerationStatus": "failed",
+  "createdAt": 1790237656931,
+  "lastActivityAt": 1790237656931,
+  "sessionId": null,
+  "selectedModel": "opus",
+  "linkedContentPath": "ReinforcementLearning/02EmoLearning.md"
+}

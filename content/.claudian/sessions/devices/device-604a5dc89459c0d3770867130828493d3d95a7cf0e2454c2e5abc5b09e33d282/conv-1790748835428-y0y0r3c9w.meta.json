@@ -1,0 +1,11 @@
+{
+  "id": "conv-1790748835428-y0y0r3c9w",
+  "providerId": "claude",
+  "title": "你好",
+  "titleGenerationStatus": "failed",
+  "createdAt": 1790748835429,
+  "lastActivityAt": 1790748835429,
+  "sessionId": null,
+  "selectedModel": "opus",
+  "linkedContentPath": "tool/012AItool.md"
+}

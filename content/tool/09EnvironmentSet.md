@@ -4,7 +4,7 @@ tags:
   - tool
 ---
 
-## node.js
+# node.js
 
 下载：https://nodejs.org/zh-cn
 
@@ -23,7 +23,7 @@ tags:
 然后选择 Y 以确认更改。
 
 
-## git
+# git
 
 下载：https://git-scm.com/install/windows
 

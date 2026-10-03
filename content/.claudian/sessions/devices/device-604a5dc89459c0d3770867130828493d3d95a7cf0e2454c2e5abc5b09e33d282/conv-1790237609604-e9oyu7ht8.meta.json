@@ -1,0 +1,13 @@
+{
+  "id": "conv-1790237609604-e9oyu7ht8",
+  "providerId": "claude",
+  "title": "总结一下这篇笔记的内容",
+  "titleGenerationStatus": "failed",
+  "createdAt": 1790237609605,
+  "lastActivityAt": 1790237609605,
+  "sessionId": null,
+  "selectedModel": "opus",
+  "linkedContentPath": "ReinforcementLearning/02EmoLearning.md",
+  "isPinned": false,
+  "isArchived": true
+}

@@ -246,18 +246,3 @@ dv.paragraph(`
 | HomePage              | 首页小铺   | #HomePage              | 欢迎来到知识杂货铺。     |
 | index                 | 目录小铺   | #index                 | 快速找到内容的索引货架。   |
 | TodoLists             | 待办小铺   | #TodoLists             | 把计划一一收好的清单小店。  |%%
-
-
-## 📅日记传送门
-```dataviewjs
-const today = dv.date('today');
-const yesterday = today.minus(dv.duration('1 day'));
-const tomorrow = today.plus(dv.duration('1 day'));
-const formatDate = (date) => date.toFormat('yyyy-MM-dd');
-
-dv.list([
-    `[[${formatDate(yesterday)}|◀ 昨天]]`,
-    `**[[${formatDate(today)}|📅 今天]]**`,
-    `[[${formatDate(tomorrow)}|明天 ▶]]`
-]);
-```
