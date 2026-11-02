@@ -1,5 +1,5 @@
 ---
-title: Codex的安装与使用
+title: ☺️Codex的安装与使用
 tags:
   - tool
 ---

@@ -7,6 +7,7 @@ tags:
 # 🚩站点
 
 > https://ikuuu.de/user/tutorial?os=windows&client=cfw
+- xfild
 
 # 😼clash
 
