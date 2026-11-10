@@ -1,0 +1,53 @@
+
+
+# LoRA
+
+
+
+![[8aa382e7620723f3e5b6c33453ee2952.jpg]]
+
+
+
+```python
+import torch  
+import torch.nn.functional as F  
+import torch.nn as nn  
+import math  
+  
+class LoRALinear(nn.Module):  
+    def __init__(self, in_features, out_features, merge,rank=16,lora_alpha=16,dropout=0.5):  
+        super(LoRALinear, self).__init__()  
+        self.in_features = in_features  
+        self.out_features = out_features  
+        self.merge = merge  
+        self.rank = rank  
+        self.dropout_rate = dropout  
+        self.lora_alpha = lora_alpha  
+  
+        self.linear = nn.Linear(in_features, out_features)  
+  
+        if rank>0:  
+            self.lora_a=nn.parameter(torch.zeros(rank,in_features))  
+            self.lora_b=nn.paramter(torch.zeros(out_features,rank))  
+            self.scale=self.lora_alpha/self.rank  
+            self.linear.weight.requires_grad=False  
+  
+        if self.dropout_rate>0:  
+            self.dropout = nn.Dropout(self.dropout_rate)  
+        else:  
+            self.dropout = nn.Identity()  
+  
+        self.initial_weights()  
+  
+    def initial_weights(self):  
+        nn.init.kaiming_uniform_(self.lora_a,a=math.sqrt(5))  
+        nn.init.zeros(self.lora_b)  
+  
+    def forward(self,x):  
+        if self.rank>0 and self.merge:  
+            output=F.linear(x,self.linear.weight+self.lora_b @ self.lora_a*self.scale,self.linear.bias)  
+            output=self.dropout(output)  
+            return output  
+        else:  
+            return self.dropout(self.linear(x))
+```
